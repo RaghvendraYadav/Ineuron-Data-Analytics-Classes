@@ -1,0 +1,55 @@
+
+--------- To Create A Table in MYSQL 
+create table if not exists bank_details(age int,job varchar(30),marital varchar(30),education varchar(30),`default` varchar(30),balance int,housing varchar(30),loan varchar(30),contact varchar(30),
+`day` int,
+`month` varchar(30),
+duration int,
+campaign int,pdays int,previous int,poutcome varchar(30),y varchar(30));
+ ----------How to see the data inside the table
+ select * from bank_details;
+ 
+ ----------------- Inset the data
+ insert into bank_details values(58,"technician","married","unknown","no",71,"yes","no","unknown",5,"may",71,1,-1,0,"unknown","no");
+ 
+ -------------------------insert more than one rows
+ 
+ insert into bank_details  values(44,"technician","single","secondary","no",29,"yes","no","unknown",5,"may",151,1,-1,0,"unknown","no"),									
+(33,"entrepreneur","married","secondary","no",2,"yes","yes","unknown",5,"may",76,1,-1,0,"unknown","no"),								
+(47,"blue-collar","married","unknown","no",1506,"yes","no","unknown",5,"may",92,1,-1,0,"unknown","no"),									
+(33,"unknown","single","unknown","no",1,"no","no","unknown",5,"may",198,1,-1,0,"unknown","no"),					
+(35,"management","married","tertiary","no",231,"yes","no","unknown",5,"may",139,1,-1,0,"unknown","no"),									
+(28,"management","single","tertiary","no",447,"yes","yes","unknown",5,"may",217,1,-1,0,"unknown","no"),									
+(42,"entrepreneur","divorced","tertiary","yes",2,"yes","no","unknown",5,"may",380,1,-1,0,"unknown","no");
+
+
+-----------------count total no of records
+select count(*) from bank_details;
+
+
+------couple of columns
+select age,job,marital,education  from bank_details;
+
+
+---------select a default column 
+select `default` from bank_details;
+
+
+------------------first five records 
+select * from bank_details limit 5;
+
+
+-----Record where age = 33
+
+select * from bank_details where age=33;
+
+----------------Records for senior citizens
+select * from bank_details where age>60;
+--------------------Record age is 60 and retired 
+
+select * from bank_details where age=60 and job='retired';
+
+----------------------------Tell different types of Jobs availablr
+select distinct job from bank_details;
+
+---------------Arannge the data in asending order basis on age column
+select * from bank_details order by age ;
